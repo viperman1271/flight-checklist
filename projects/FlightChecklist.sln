@@ -5,7 +5,15 @@ VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightChecklist.Android", "..\source\FlightChecklist\FlightChecklist.Android\FlightChecklist.Android.csproj", "{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightChecklist", "..\source\FlightChecklist\FlightChecklist\FlightChecklist.csproj", "{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightChecklist", "..\source\FlightChecklist\FlightChecklist\FlightChecklist.csproj", "{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightChecklist.Creator.Wpf", "..\FlightChecklist.Creator.Wpf\FlightChecklist.Creator.Wpf.csproj", "{71665B31-B138-49C2-823B-C85E2DEEA0F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightChecklist.ObjectModel", "..\FlightChecklist.ObjectModel\FlightChecklist.ObjectModel.csproj", "{F273E091-95C0-4269-82D8-717BA2993F7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{C7206414-E422-4B31-A5BA-632D3B166D41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{C0883ED6-077D-437B-9575-689DED1001A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +31,23 @@ Global
 		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71665B31-B138-49C2-823B-C85E2DEEA0F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71665B31-B138-49C2-823B-C85E2DEEA0F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71665B31-B138-49C2-823B-C85E2DEEA0F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71665B31-B138-49C2-823B-C85E2DEEA0F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F273E091-95C0-4269-82D8-717BA2993F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F273E091-95C0-4269-82D8-717BA2993F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F273E091-95C0-4269-82D8-717BA2993F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F273E091-95C0-4269-82D8-717BA2993F7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6} = {C7206414-E422-4B31-A5BA-632D3B166D41}
+		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4} = {C0883ED6-077D-437B-9575-689DED1001A7}
+		{71665B31-B138-49C2-823B-C85E2DEEA0F4} = {C7206414-E422-4B31-A5BA-632D3B166D41}
+		{F273E091-95C0-4269-82D8-717BA2993F7D} = {C0883ED6-077D-437B-9575-689DED1001A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F312A5F0-C9C2-433D-B9EC-BD95A759EFDA}
