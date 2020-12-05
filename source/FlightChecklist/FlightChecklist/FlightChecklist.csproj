@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\FlightChecklist.ObjectModel\FlightChecklist.ObjectModel.csproj" />
   </ItemGroup>
 </Project>

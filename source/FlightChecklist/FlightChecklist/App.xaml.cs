@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -7,11 +6,11 @@ namespace FlightChecklist
 {
     public partial class App : Application
     {
-        public App()
+        public App(MainModel model)
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainPage(model);
         }
 
         protected override void OnStart()

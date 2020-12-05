@@ -3,16 +3,13 @@ using Android.Content.PM;
 using Android.OS;
 using FlightChecklist.ObjectModel;
 using System.IO;
-using System.Collections.Generic;
 
 namespace FlightChecklist.Droid
 {
     [Activity(Label = "FlightChecklist", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        private readonly List<Checklist> _CheckLists;
-
-        public IEnumerable<Checklist> Checklists { get { return _CheckLists; } }
+        private readonly MainModel _Model = new MainModel();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -24,23 +21,26 @@ namespace FlightChecklist.Droid
             ReadResources();
 
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            LoadApplication(new App(_Model));
         }
 
         private void ReadResources()
         {
             try
             {
-                foreach(string file in Directory.EnumerateFiles("Checklists"))
-                {
-
-                }
+                //TODO: Replace with an iteration of assets
+                string json;
                 using (Stream input = Assets.Open("Checklists/Cessna172.json"))
                 {
-
+                    using (StreamReader reader = new StreamReader(input))
+                    {
+                        json = reader.ReadToEnd();
+                    }
                 }
+
+                _Model.Checklists.Add(Checklist.LoadJson(json));
             }
-            catch
+            catch (System.Exception ex)
             {
 
             }
