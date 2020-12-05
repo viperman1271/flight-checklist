@@ -1,0 +1,20 @@
+{
+  "Identifiers": [
+    {
+      "Name": "{PreflightChecklist}",
+      "Value": "Checklist avant vol"
+    },
+    {
+      "Name": "{FuelQuantity}",
+      "Value": "Quantité d'essence aile gauche et droite"
+    },
+    {
+      "Name": "{VisualVerification}",
+      "Value": "Vérifié Visuellement"
+    },
+    {
+      "Name": "{FuelPurge}",
+      "Value": "Propreté et type vérifié"
+    }
+  ]
+}

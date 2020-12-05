@@ -1,0 +1,30 @@
+{
+  "Categories": [
+    {
+      "ParentCategory": null,
+      "Name": "Pre-Flight Inspection",
+      "Categories": [
+        {
+          "ParentCategory": null,
+          "Name": "Exterieur General et Fluides",
+          "Categories": [],
+          "Items": [
+            {
+              "Name" : "FuelQuantity",
+              "Identifer" : "{FuelQuantity}",
+              "Action" : "{VisualVerification}"
+            },
+            {
+              "Name" : "FuelPurge",
+              "Identifer" : "{FuelPurge}",
+              "Action" : "{FuelPurgeValidation}"
+            },
+          ]
+        }
+      ],
+      "Items": []
+    }
+  ],
+  "Aircraft": "Cessna 172",
+  "Name": "Default"
+}
