@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightChecklist.Android", "..\source\FlightChecklist\FlightChecklist.Android\FlightChecklist.Android.csproj", "{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightChecklist", "..\source\FlightChecklist\FlightChecklist\FlightChecklist.csproj", "{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4DFCFDB-363E-4B8F-802D-A4327C3E7AF6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE9DE79-A70D-4FDD-A1AD-F5FA922EADD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F312A5F0-C9C2-433D-B9EC-BD95A759EFDA}
+	EndGlobalSection
+EndGlobal
