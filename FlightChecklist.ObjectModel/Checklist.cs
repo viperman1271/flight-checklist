@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace FlightChecklist.ObjectModel
 {
@@ -67,6 +68,13 @@ namespace FlightChecklist.ObjectModel
     [JsonObject(MemberSerialization.OptOut)]
     public class Category
     {
+        #region Variables
+
+        [JsonIgnore]
+        private string _Identifier;
+
+        #endregion
+
         #region Constructor
 
         public Category()
@@ -84,7 +92,11 @@ namespace FlightChecklist.ObjectModel
 
         public string Name { get; set; }
 
-        public string Identifier { get; set; }
+        public string Identifier
+        {
+            get { return _Identifier ?? Name; }
+            set { _Identifier = value; }
+        }
 
         public List<Category> Categories { get; set; }
 
@@ -94,10 +106,43 @@ namespace FlightChecklist.ObjectModel
     }
 
     [JsonObject(MemberSerialization.OptOut)]
-    public class Item
+    public class Item : INotifyPropertyChanged
     {
+        [JsonIgnore]
+        private bool _IsChecked;
+
+        [JsonIgnore]
+        private string _Identifier;
+
         public string Name { get; set; }
-        public string Identifier { get; set; }
+
+        public string Identifier
+        {
+            get { return _Identifier ?? Name; }
+            set { _Identifier = value; }
+        }
+
         public string Action { get; set; }
+
+        [JsonIgnore]
+        public bool IsChecked
+        {
+            get { return _IsChecked; }
+            set
+            {
+                if (_IsChecked != value)
+                {
+                    _IsChecked = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
