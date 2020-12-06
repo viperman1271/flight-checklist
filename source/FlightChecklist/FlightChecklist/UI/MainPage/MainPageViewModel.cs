@@ -34,7 +34,7 @@ namespace FlightChecklist
         {
             if (_SelectedItem != null)
             {
-                CheckListPage page = new CheckListPage(_SelectedItem);
+                CheckListPage page = new CheckListPage(_SelectedItem, _Model);
                 await _View.Navigation.PushModalAsync(page);
             }
         }

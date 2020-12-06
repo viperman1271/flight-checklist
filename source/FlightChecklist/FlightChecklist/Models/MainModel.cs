@@ -8,8 +8,10 @@ namespace FlightChecklist
         public MainModel()
         {
             Checklists = new List<Checklist>();
+            IdentifierPackages = new List<IdentifierPackage>();
         }
 
         public List<Checklist> Checklists { get; }
+        public List<IdentifierPackage> IdentifierPackages { get; }
     }
 }

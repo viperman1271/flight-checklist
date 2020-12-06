@@ -5,16 +5,19 @@ namespace FlightChecklist
 {
     public class ChecklistPageViewModel
     {
-        private Checklist _Model;
+        private readonly Checklist _Model;
 
-        public ChecklistPageViewModel(Checklist checklist)
+        public ChecklistPageViewModel(Checklist checklist, MainModel dataRepository)
         {
             _Model = checklist;
+            DataRepository = dataRepository;
         }
 
         public List<Category> Items
         {
             get { return _Model?.Categories; }
         }
+
+        public MainModel DataRepository { get; }
     }
 }

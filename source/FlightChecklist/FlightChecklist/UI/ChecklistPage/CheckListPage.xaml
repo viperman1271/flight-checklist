@@ -8,21 +8,24 @@
         <DataTemplate x:Key="CategoryDataTemplate" x:DataType="objectmodel:Category">
             <ViewCell>
                 <StackLayout>
-                    <Label Text="{Binding Identifier}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+                    <Label Text="12345"/>
+                    <Label Text="{Binding Identifier, Converter={StaticResource LocalizationConverter}}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
                 </StackLayout>
             </ViewCell>
         </DataTemplate>
         <DataTemplate x:Key="ItemDataTemplate" x:DataType="objectmodel:Item">
             <ViewCell>
                 <StackLayout>
-                    <Label Text="{Binding Identifier}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
-                    <Label Text="{Binding Action}"/>
+                    <Label Text="456789"/>
+                    <Label Text="{Binding Identifier, Converter={StaticResource LocalizationConverter}}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+                    <Label Text="{Binding Action, Converter={StaticResource LocalizationConverter}}"/>
                 </StackLayout>
             </ViewCell>
         </DataTemplate>
-        <local:FlightChecklistDataTemplateSelector x:Key="_DataTemplateSelector" CategoryTemplate="{StaticResource CategoryDataTemplate}" ItemTemplate="{StaticResource ItemDataTemplate}"/>
+        <local:FlightChecklistDataTemplateSelector x:Key="DataTemplateSelector" CategoryTemplate="{StaticResource CategoryDataTemplate}" ItemTemplate="{StaticResource ItemDataTemplate}"/>
+        <local:LocalizationConverter x:Key="LocalizationConverter" DataRepository="{Binding DataRepository}"/>
     </ContentPage.Resources>
     <StackLayout>
-        <ListView ItemsSource="{Binding Items}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" SelectedItem="{Binding SelectedItem}" ItemTemplate="{StaticResource _DataTemplateSelector}"/>
+        <ListView ItemsSource="{Binding Items}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" SelectedItem="{Binding SelectedItem}" ItemTemplate="{StaticResource DataTemplateSelector}"/>
     </StackLayout>
 </ContentPage>
