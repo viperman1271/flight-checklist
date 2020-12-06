@@ -60,6 +60,20 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Models\MainModel.cs" />
+    <Compile Include="Source\UI\ChecklistPage\CheckListPage.xaml.cs">
+      <DependentUpon>CheckListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\UI\ChecklistPage\ChecklistPageViewModel.cs" />
+    <Compile Include="Source\UI\MainPage\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Source\UI\MainPage\MainPageViewModel.cs" />
+    <Compile Include="Source\Utilities\DataTemplateSelector.cs" />
+    <Compile Include="Source\Utilities\LocalizationConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Checklists\Cessna172.json" />
@@ -99,10 +113,21 @@
       <Project>{f273e091-95c0-4269-82d8-717ba2993f7d}</Project>
       <Name>FlightChecklist.ObjectModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FlightChecklist\FlightChecklist.csproj">
-      <Project>{2E699A67-CEC4-4FCF-8A11-FD3C584F81E6}</Project>
-      <Name>FlightChecklist</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Source\UI\ChecklistPage\CheckListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Source\UI\MainPage\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Source\App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

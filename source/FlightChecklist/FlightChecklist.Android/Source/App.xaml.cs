@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FlightChecklist.ObjectModel;
+using System;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,10 +10,13 @@ namespace FlightChecklist
     public partial class App : Application
     {
         public static Action<string, string, string> Log { get; private set; }
+        public static IdentifierPackage DataRepository { get; private set; }
 
         public App(MainModel model, Action<string, string, string> log)
         {
             InitializeComponent();
+
+            DataRepository = model.IdentifierPackages.FirstOrDefault();
 
             MainPage = new MainPage(model);
             Log = log;

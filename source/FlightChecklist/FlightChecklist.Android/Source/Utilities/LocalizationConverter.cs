@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace FlightChecklist
 {
     internal class LocalizationConverter : IValueConverter
     {
-        public static readonly BindableProperty DataRepositoryProperty = BindableProperty.Create(nameof(DataRepository), typeof(MainModel), typeof(LocalizationConverter));
-
-        public MainModel DataRepository { get; set; }
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if(targetType == typeof(string) && value == null)
@@ -20,12 +17,14 @@ namespace FlightChecklist
 
             if (value is string && targetType == typeof(string))
             {
-                return "Unknown";
+                ObjectModel.Identifier identifier = App.DataRepository.Identifiers.FirstOrDefault(o => o.Name == (string)value);
+                if (identifier != null)
+                {
+                    return identifier.Value;
+                }
             }
-            else
-            {
-                return $"value is {value?.GetType()} and target type is {targetType}. Original value of value is {value}";
-            }
+
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

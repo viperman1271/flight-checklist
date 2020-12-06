@@ -7,7 +7,6 @@ namespace FlightChecklist
     {
         private readonly MainPage _View;
         private readonly MainModel _Model;
-        private Checklist _SelectedItem;
 
         public MainPageViewModel(MainPage view, MainModel model)
         {
@@ -19,22 +18,18 @@ namespace FlightChecklist
 
         public Checklist SelectedItem
         {
-            get { return _SelectedItem; }
+            get { return null; }
             set
             {
-                if(_SelectedItem != value)
-                {
-                    _SelectedItem = value;
-                    OnSelectedChecklist();
-                }
+                OnSelectedChecklist(value);
             }
         }
 
-        private async void OnSelectedChecklist()
+        private async void OnSelectedChecklist(Checklist selectedItem)
         {
-            if (_SelectedItem != null)
+            if (selectedItem != null)
             {
-                CheckListPage page = new CheckListPage(_SelectedItem, _Model);
+                CheckListPage page = new CheckListPage(selectedItem);
                 await _View.Navigation.PushModalAsync(page);
             }
         }
