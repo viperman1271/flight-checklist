@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace FlightChecklist
@@ -7,19 +7,8 @@ namespace FlightChecklist
     {
         public MainPage(MainModel model = null)
         {
-            BindingContext = new MainPageViewModel(model);
-
-            try
-            {
-                InitializeComponent();
-            }
-            catch (InvalidCastException ex2)
-            {
-
-            }
-            catch (Exception ex)
-            {
-            }
+            BindingContext = new MainPageViewModel(this, model);
+            InitializeComponent();
         }
     }
 }

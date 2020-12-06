@@ -4,7 +4,7 @@
              xmlns:objectmodel="clr-namespace:FlightChecklist.ObjectModel;assembly=FlightChecklist.ObjectModel"
              x:Class="FlightChecklist.MainPage">
     <StackLayout>
-        <ListView ItemsSource="{Binding Items}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <ListView ItemsSource="{Binding Items}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" SelectedItem="{Binding SelectedItem}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="objectmodel:Checklist">
                     <ViewCell>
